@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">TestForJob</string>
+    <string name="title_section1">Страны</string>
+    <string name="title_section2">Избранное</string>
+    <string name="title_section3">Настройки</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="settings_fragment">Настройки</string>
+    <string name="url_datasourse">https://atw-backend.azurewebsites.net/api/countries</string>
+</resources>

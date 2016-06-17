@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "C:\\Android\\AndroidStudioProjects\\TestForJob\\library\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_action_cancel.png",
+        "source": "C:\\Android\\AndroidStudioProjects\\TestForJob\\library\\src\\main\\res\\drawable-ldpi\\ic_action_cancel.png"
+    },
+    {
+        "merged": "C:\\Android\\AndroidStudioProjects\\TestForJob\\library\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_action_arrow_left.png",
+        "source": "C:\\Android\\AndroidStudioProjects\\TestForJob\\library\\src\\main\\res\\drawable-ldpi\\ic_action_arrow_left.png"
+    },
+    {
+        "merged": "C:\\Android\\AndroidStudioProjects\\MyFellasCompass\\library\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_action_arrow_left.png",
+        "source": "C:\\Android\\AndroidStudioProjects\\MyFellasCompass\\library\\src\\main\\res\\drawable-ldpi\\ic_action_arrow_left.png"
+    },
+    {
+        "merged": "C:\\Android\\AndroidStudioProjects\\MyFellasCompass\\library\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_action_cancel.png",
+        "source": "C:\\Android\\AndroidStudioProjects\\MyFellasCompass\\library\\src\\main\\res\\drawable-ldpi\\ic_action_cancel.png"
+    },
+    {
+        "merged": "C:\\Android\\AndroidStudioProjects\\MyFellasCompass\\library\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_action_mic.png",
+        "source": "C:\\Android\\AndroidStudioProjects\\MyFellasCompass\\library\\src\\main\\res\\drawable-ldpi\\ic_action_mic.png"
+    },
+    {
+        "merged": "C:\\Android\\AndroidStudioProjects\\TestForJob\\library\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\ic_action_mic.png",
+        "source": "C:\\Android\\AndroidStudioProjects\\TestForJob\\library\\src\\main\\res\\drawable-ldpi\\ic_action_mic.png"
+    }
+]
