@@ -4,7 +4,9 @@ import java.util.HashMap;
 import java.util.List;
 
 import android.content.Context;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
+import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -30,6 +32,10 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         this.context = context;
         this.listDataHeader = listDataHeader;
         this.listDataChild = listChildData;
+
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+        groupSelected = prefs.getInt("groupSelected",-1);
+        childSelected = prefs.getInt("childSelected",-1);
     }
 
     @Override
