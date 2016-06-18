@@ -1,13 +1,17 @@
 package com.nordman.big.testforjob;
 
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v4.app.Fragment;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ExpandableListView;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.blunderer.materialdesignlibrary.interfaces.ListView;
@@ -44,7 +48,7 @@ public class MainFragment extends Fragment implements CountryBundleHandler {
 
     @Override
     public void onDataLoaded() {
-        Log.d("LOG","...data loaded");
+        Log.d("LOG","...data loaded MainFragment");
         expListView = (ExpandableListView) getActivity().findViewById(R.id.lvExp);
         listAdapter = new ExpandableListAdapter(this.getActivity(), countryBundle.listDataHeader, countryBundle.listDataChild);
         expListView.setChoiceMode(ExpandableListView.CHOICE_MODE_SINGLE);
@@ -58,14 +62,35 @@ public class MainFragment extends Fragment implements CountryBundleHandler {
 
             //int index = parent.getFlatListPosition(ExpandableListView.getPackedPositionForChild(groupPosition, childPosition));
 
+            SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getActivity());
+            SharedPreferences.Editor ed = prefs.edit();
+            ed.putInt("groupSelected",groupPosition);
+            ed.putInt("childSelected",childPosition);
             ((ExpandableListAdapter)parent.getExpandableListAdapter()).groupSelected = groupPosition;
             ((ExpandableListAdapter)parent.getExpandableListAdapter()).childSelected = childPosition;
+
             v.setBackgroundResource(R.color.colorAccent);
             View oldView = ((ExpandableListAdapter)parent.getExpandableListAdapter()).oldView;
 
             if (oldView != null) oldView.setBackgroundResource(R.color.colorWhite);
             v.setBackgroundResource(R.color.colorAccent);
+            ((ExpandableListAdapter)parent.getExpandableListAdapter()).oldView = v;
 
+            TextView txtListChild = (TextView) v.findViewById(R.id.lblListItem);
+            Log.d("LOG",txtListChild.getText().toString());
+            ImageView imageStarOn = (ImageView) v.findViewById(R.id.imageStarOn);
+            ImageView imageStarOff = (ImageView) v.findViewById(R.id.imageStarOff);
+            if (imageStarOn.getVisibility()==View.VISIBLE) {
+                imageStarOn.setVisibility(View.GONE);
+                imageStarOff.setVisibility(View.VISIBLE);
+                ed.putString(txtListChild.getText().toString(),"off");
+            } else {
+                imageStarOn.setVisibility(View.VISIBLE);
+                imageStarOff.setVisibility(View.GONE);
+                ed.putString(txtListChild.getText().toString(),"on");
+            }
+
+            ed.apply();
             return true;
         }
     };

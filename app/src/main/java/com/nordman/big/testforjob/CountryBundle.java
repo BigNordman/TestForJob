@@ -25,6 +25,8 @@ public class CountryBundle {
     private CountryBundleHandler handler;
     List<String> listDataHeader = new ArrayList<>();
     HashMap<String, List<String>> listDataChild = new HashMap<>();
+    List<String> listAllChildren = new ArrayList<String>();
+
 
     public CountryBundle(Context context, CountryBundleHandler handler) {
         this.context = context;
@@ -89,6 +91,7 @@ public class CountryBundle {
                         JSONObject jsonCity = jsonCities.getJSONObject(j);
                         String cityName = jsonCity.getString("Name");
                         listCities.add(cityName);
+                        listAllChildren.add(cityName);
                     }
                     listDataChild.put(countryName, listCities);
                 }

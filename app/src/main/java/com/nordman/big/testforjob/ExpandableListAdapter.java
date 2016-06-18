@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseExpandableListAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 /**
@@ -67,6 +68,20 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         } else {
             convertView.setBackgroundResource(R.color.colorWhite);
         }
+
+        ImageView imageStarOn = (ImageView) convertView.findViewById(R.id.imageStarOn);
+        ImageView imageStarOff = (ImageView) convertView.findViewById(R.id.imageStarOff);
+        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(context);
+
+        if (prefs.getString(childText,"off").equals("off")) {
+            imageStarOn.setVisibility(View.GONE);
+            imageStarOff.setVisibility(View.VISIBLE);
+        } else {
+            imageStarOn.setVisibility(View.VISIBLE);
+            imageStarOff.setVisibility(View.GONE);
+        }
+
+
 
 
         txtListChild.setText(childText);

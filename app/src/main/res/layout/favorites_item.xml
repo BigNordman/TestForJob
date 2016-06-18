@@ -6,7 +6,7 @@
     android:weightSum="1">
 
     <TextView
-        android:id="@+id/lblListItem"
+        android:id="@+id/lblFavoritesItem"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:textSize="17sp"
@@ -15,20 +15,12 @@
         android:paddingLeft="?android:attr/expandableListPreferredChildPaddingLeft"
         android:layout_weight="1"
         />
-
     <ImageView
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_weight="1"
-        android:id="@+id/imageStarOff"
-        android:src="@android:drawable/btn_star_big_off"
+        android:id="@+id/imageRemove"
+        android:src="@android:drawable/ic_delete"
         android:visibility="visible"/>
-    <ImageView
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_weight="1"
-        android:id="@+id/imageStarOn"
-        android:src="@android:drawable/btn_star_big_on"
-        android:visibility="gone"/>
 
 </LinearLayout>
